@@ -1,0 +1,181 @@
+@import "../../app.scss";
+
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .textContainer {
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include mobile {
+      // align-self: center;
+      // text-align: center;
+      // flex-direction: column;
+      // gap: 20px;
+      flex: 0.7;
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 16px;
+      color: gray;
+      text-align: right;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    hr {
+      width: 300px;
+      border: none;
+      border-top: 0.5px solid gray;
+
+      @include mobile {
+        width: 20px;
+      }
+    }
+  }
+  .titleContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      img {
+        width: 250px;
+        height: 85px;
+        border-radius: 50px;
+        object-fit: cover;
+
+        @include mobile {
+          width: 200px;
+          height: 65px;
+        }
+      }
+
+      h1 {
+        font-size: 56px;
+        font-weight: 100;
+
+        @include mobile {
+          font-size: 30px;
+        }
+      }
+
+      button {
+        width: 230px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: orange;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+
+        @include mobile {
+          font-size: 16px;
+          width: 150px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  .listContainer {
+    flex: 2.5;
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+
+    @include mobile {
+      display: none;
+    }
+
+    .box {
+      padding: 30px;
+      border: 0.5px solid gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 290px;
+
+      @include mobile {
+        align-items: center;
+        gap: 0px;
+        padding: 15px;
+        height: 40%;
+      }
+
+      p {
+        @include mobile {
+          display: none;
+        }
+      }
+
+      h2 {
+        font-size: 19px;
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: rebeccapurple;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+
+        @include mobile {
+          background-color: rebeccapurple;
+          border: 1px solid rebeccapurple;
+          border-radius: 5px;
+          color: white;
+          width: 50%;
+          padding: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  .mobile {
+    display: none;
+
+    @include mobile {
+      flex: 2;
+      flex-direction: column;
+      width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "../../app.scss";
+
+.about {
+  height: 100%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+  overflow: hidden;
+
+  @include mobile {
+    width: 90%;
+    flex-direction: column;
+  }
+}
+.about-me h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: rebeccapurple;
+
+  @include mobile {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+.about-me p {
+  margin-bottom: 2em;
+  line-height: 1.4em;
+
+  @include mobile {
+    font-size: 0.85em;
+    margin-bottom: 1em;
+  }
+}
+.experience h1 {
+  margin-bottom: 1em;
+  color: rebeccapurple;
+
+  @include mobile {
+    font-size: 1.2em;
+    margin-bottom: 0.6em;
+  }
+}
+.junior {
+  display: flex;
+  flex-direction: column;
+}
+.row-1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.6em;
+}
+.row-1 h2 {
+  font-weight: 400;
+  font-size: 1.2em;
+
+  @include mobile {
+    font-size: 0.9em;
+  }
+}
+.row-1 p {
+  font-size: 0.7em;
+  font-weight: 600;
+  background: white;
+  color: rgba(15, 22, 36, 100%);
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 2em;
+
+  @include mobile {
+    font-size: 0.6em;
+  }
+}
+.row-2 h6 {
+  font-weight: 500;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.1em;
+  margin-bottom: 2em;
+
+  @include mobile {
+    font-size: 0.5em;
+  }
+}
+.row-2 ul {
+  background: white;
+  width: 100%;
+  padding: 0.005em;
+  border-radius: 2em;
+  margin-bottom: 2em;
+
+  @include mobile {
+    margin-bottom: 0.5em;
+  }
+}
+.education h1 {
+  margin-bottom: 1em;
+  color: rebeccapurple;
+
+  @include mobile {
+    font-size: 1.2em;
+    margin-bottom: 0.6em;
+  }
+}
