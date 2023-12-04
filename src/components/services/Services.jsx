@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import "./services.scss";
 import { motion, useInView } from "framer-motion";
+import people from "/src/images/people.webp";
 
 const variants = {
   initial: {
@@ -50,7 +51,7 @@ const Services = () => {
         transition={{ duration: 1 }}
       >
         <div className="title">
-          <img src="/people.webp" alt="" />
+          <img src={people} alt="" />
           <h1>
             <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Designs
           </h1>
