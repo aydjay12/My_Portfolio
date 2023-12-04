@@ -13,7 +13,8 @@
     font-size: 26px;
 
     @include mobile {
-      font-size: 18px;
+      top: 2.3em;
+      font-size: 20px;
       padding-top: 20px;
     }
 
@@ -32,6 +33,10 @@
     height: 100%;
     padding-top: 2em;
     overflow: hidden;
+
+    @include mobile {
+      padding-top: 0;
+    }
 
     .wrapper {
       max-width: 1100px;
@@ -55,8 +60,7 @@
 
         @include mobile {
           width: 90%;
-          height: 40%;
-          max-height: 300px;
+          height: 30%;
           object-fit: contain;
         }
       }
@@ -73,7 +77,7 @@
           align-items: center;
           text-align: center;
           margin-top: 0;
-          gap: 20px;
+          gap: 30px;
           flex: 0;
         }
 
@@ -83,7 +87,7 @@
           letter-spacing: normal;
 
           @include mobile {
-            font-size: 28px;
+            font-size: 38px;
           }
         }
 
@@ -92,7 +96,7 @@
           font-size: 15px;
 
           @include mobile {
-            font-size: 13px;
+            font-size: 17px;
           }
         }
 
@@ -106,8 +110,10 @@
           transition: 0.5s;
 
           @include mobile {
-            padding: 9px;
-            width: 120px;
+            padding: 14px;
+            width: 150px;
+            font-size: 17px;
+            font-weight: 600;
           }
         }
         button:hover {
@@ -135,9 +141,9 @@
     border-radius: 3px;
 
     @include mobile {
-      margin-top: -3.4em;
-      left: 39.5%;
-      padding: 8px 15px;
+      margin-top: -8em;
+      left: 36%;
+      padding: 14px 25px;
       font-size: 13px;
       border-radius: 50em;
     }
@@ -160,9 +166,9 @@
     width: 50px;
 
     @include mobile {
-      width: 36px;
-      top: -1.3em;
-      right: 15.5em;
+      width: 40px;
+      top: 0em;
+      right: 15em;
     }
   }
 }

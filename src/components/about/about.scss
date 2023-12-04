@@ -20,8 +20,9 @@
   color: rebeccapurple;
 
   @include mobile {
-    margin-top: 0.5em;
+    margin-top: 2em;
     margin-bottom: 0.5em;
+    font-size: 2em;
   }
 }
 .about-me p {
@@ -30,7 +31,8 @@
 
   @include mobile {
     font-size: 0.85em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
+    font-size: 0.9em;
   }
 }
 .experience h1 {
@@ -38,7 +40,7 @@
   color: rebeccapurple;
 
   @include mobile {
-    font-size: 1.2em;
+    font-size: 1.7em;
     margin-bottom: 0.6em;
   }
 }
@@ -57,7 +59,7 @@
   font-size: 1.2em;
 
   @include mobile {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
 .row-1 p {
@@ -73,6 +75,8 @@
 
   @include mobile {
     font-size: 0.6em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
   }
 }
 .row-2 h6 {
@@ -82,7 +86,7 @@
   margin-bottom: 2em;
 
   @include mobile {
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 }
 .row-2 ul {
@@ -93,7 +97,7 @@
   margin-bottom: 2em;
 
   @include mobile {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
 }
 .education h1 {
@@ -101,7 +105,7 @@
   color: rebeccapurple;
 
   @include mobile {
-    font-size: 1.2em;
+    font-size: 1.7em;
     margin-bottom: 0.6em;
   }
 }

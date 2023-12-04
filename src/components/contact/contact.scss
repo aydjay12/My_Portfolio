@@ -22,10 +22,12 @@
     margin-bottom: 2em;
 
     @include mobile {
-      gap: 10px;
+      gap: 20px;
       text-align: center;
       align-items: center;
       margin-bottom: 0;
+      margin-top: 3em;
+      flex: 0.8;
     }
 
     h1 {
@@ -33,13 +35,22 @@
       line-height: 70px;
 
       @include mobile {
-        font-size: 30px;
-        height: 55px;
+        font-size: 36px;
+        height: 65px;
+      }
+    }
+
+    h2 {
+      @include mobile {
+        font-size: 26px;
       }
     }
 
     span {
       font-weight: 300;
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
 
@@ -64,7 +75,7 @@
 
       @include mobile {
         top: 0.5em;
-        right: 3em;
+        right: 2.5em;
       }
     }
 

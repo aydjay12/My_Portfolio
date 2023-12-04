@@ -30,7 +30,7 @@
       text-align: right;
 
       @include mobile {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -62,7 +62,7 @@
       @include mobile {
         flex-direction: column;
         text-align: center;
-        gap: 12px;
+        gap: 20px;
       }
 
       img {
@@ -72,8 +72,8 @@
         object-fit: cover;
 
         @include mobile {
-          width: 200px;
-          height: 65px;
+          width: 230px;
+          height: 85px;
         }
       }
 
@@ -82,7 +82,7 @@
         font-weight: 100;
 
         @include mobile {
-          font-size: 30px;
+          font-size: 40px;
         }
       }
 
@@ -96,9 +96,10 @@
         cursor: pointer;
 
         @include mobile {
-          font-size: 16px;
-          width: 150px;
-          height: 50px;
+          font-size: 18px;
+          width: 200px;
+          font-weight: 600;
+          height: 70px;
         }
       }
     }
@@ -123,6 +124,7 @@
 
       @include mobile {
         align-items: center;
+        justify-content: space-around;
         gap: 0px;
         padding: 15px;
         height: 40%;
@@ -159,10 +161,8 @@
           border: 1px solid rebeccapurple;
           border-radius: 5px;
           color: white;
-          width: 50%;
-          padding: 5px;
-          padding-left: 10px;
-          padding-right: 10px;
+          width: 60%;
+          padding: 10px;
         }
       }
     }
