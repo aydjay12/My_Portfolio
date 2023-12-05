@@ -115,7 +115,7 @@
     }
 
     .box {
-      padding: 30px;
+      padding: 25px;
       border: 0.5px solid gray;
       display: flex;
       flex-direction: column;
@@ -131,6 +131,7 @@
       }
 
       p {
+        text-align: justify;
         @include mobile {
           display: none;
         }
