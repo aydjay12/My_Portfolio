@@ -51,6 +51,18 @@
       margin-top: 10em;
     }
 
+    .mob-img {
+      width: 50%;
+      height: 36%;
+      display: none;
+
+      @include mobile {
+        display: flex;
+        object-fit: cover;
+        border-radius: 100em;
+      }
+    }
+
     h2 {
       font-size: 21px;
       color: rebeccapurple;
@@ -83,7 +95,8 @@
         transition: 0.5s;
 
         @include mobile {
-          font-size: 17px;
+          font-size: 16px;
+          padding: 16px;
         }
       }
       .cont {
@@ -125,6 +138,7 @@
     justify-content: start;
     align-items: center;
     margin-top: -41em;
+    display: none;
   }
 
   img {

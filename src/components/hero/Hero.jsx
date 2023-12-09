@@ -62,6 +62,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
+          <motion.img src={hero} className="mob-img" />
           <motion.h2 variants={textVariants}>AYODEJI OLALEKAN</motion.h2>
           <motion.h1 variants={textVariants}>Front-end Web Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
