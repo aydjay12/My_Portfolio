@@ -3,6 +3,7 @@ import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import ecommerce from "/src/images/ecommerce.png";
 import rentup from "/src/images/rentup.png";
+import fitclub from "/src/images/fitclub.png";
 import blog from "/src/images/blog.png";
 import agency from "/src/images/agency.png";
 import arua from "/src/images/arua.png";
@@ -51,41 +52,48 @@ const items = [
   },
   {
     id: 3,
+    title: "FitClub Gym Website",
+    img: fitclub,
+    href: "https://aydjay12.github.io/FitClub/",
+    desc: "Welcome to the FitClub Gym Website Demo, a showcase of my frontend development skills using React, Sass, and Vite. From sleek design elements to seamless navigation, this demo highlights my expertise in creating dynamic and responsive web applications.",
+  },
+  {
+    id: 4,
     title: "Blog Website",
     img: blog,
     href: "https://aydjay12.github.io/Blog_Website/",
     desc: "Crafted a user-friendly React.js blog frontend with an intuitive layout and dynamic post rendering for an engaging reading experience.",
   },
   {
-    id: 4,
+    id: 5,
     title: "Agency Website",
     img: agency,
     href: "https://aydjay12.github.io/Agency_Website/",
     desc: "Developed a sleek and responsive React.js frontend for an agency website. Incorporated modern design elements, seamless navigation, and dynamic content presentation to enhance user engagement.",
   },
   {
-    id: 5,
+    id: 6,
     title: "ARUA 2023",
     img: arua,
     href: "https://aydjay12.github.io/ARUA-2023/",
     desc: "Designed and developed a dynamic event website for the University of Lagos, showcasing a modern and engaging interface. Implemented features such as event details, schedule, and registration forms, ensuring seamless navigation and a user-friendly experience.",
   },
   {
-    id: 6,
+    id: 7,
     title: "Netflix Dub Website",
     img: streamit,
     href: "https://aydjay12.github.io/netflix-dub/",
     desc: "Developed a Netflix clone website using React.js, offering a visually immersive and responsive streaming experience. Implemented key features such as user authentication, dynamic movie fetching, and an interactive video player to replicate the essence of the original platform.",
   },
   {
-    id: 7,
+    id: 8,
     title: "Deji's Pizzeria",
     img: pizzeria,
     href: "https://aydjay12.github.io/Deji_Pizzeria/",
     desc: "Crafted a mouthwatering Pizzeria website sample using React.js, featuring an appetizing design and seamless navigation. Leveraged React components for a responsive frontend, delivering a visually appealing and delicious representation of the pizzeria's offerings.",
   },
   {
-    id: 8,
+    id: 9,
     title: "Fruit Website",
     img: fruit,
     href: "https://aydjay12.github.io/Fruit-Website/",
