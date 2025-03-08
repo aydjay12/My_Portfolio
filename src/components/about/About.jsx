@@ -95,7 +95,7 @@ const About = () => {
             <span className="tag">Full-Time</span>
           </div>
           <div className="details">
-            <h3>University of Lagos • Graduated 2022</h3>
+            <h3>University of Lagos • Graduated 2024</h3>
           </div>
         </div>
       </motion.div>

@@ -3,38 +3,57 @@ import { motion } from "framer-motion";
 import hero from "/src/images/hero.png";
 import scroll from "/src/images/scroll.png";
 
-const textVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
-    },
-  },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
-    transition: {
-      duration: 2,
-      repeat: Infinity,
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
     },
   },
 };
-const sliderVariants = {
-  initial: {
-    x: 0,
-  },
-  animate: {
-    x: "-220%",
+
+const textVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const buttonHover = {
+  hover: {
+    scale: 1.05,
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
+const scrollVariants = {
+  animate: {
+    y: [0, 10, 0],
+    opacity: [0.5, 1, 0.5],
+    transition: {
+      duration: 1.5,
       repeat: Infinity,
-      repeatType: "mirror",
+      ease: "easeInOut",
+    },
+  },
+};
+
+const sliderVariants = {
+  initial: { x: "100%" },
+  animate: {
+    x: "-100%",
+    transition: {
       duration: 20,
+      repeat: Infinity,
+      ease: "linear",
     },
   },
 };
@@ -58,47 +77,54 @@ const Hero = () => {
       <div className="wrapper">
         <motion.div
           className="textContainer"
-          variants={textVariants}
-          initial="initial"
-          animate="animate"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <motion.img src={hero} className="mob-img" />
+          <motion.img src={hero} className="mob-img" variants={textVariants} />
           <motion.h2 variants={textVariants}>AYODEJI OLALEKAN</motion.h2>
           <motion.h1 variants={textVariants}>Full Stack Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <motion.button
               className="latest"
-              variants={textVariants}
+              variants={buttonHover}
+              whileHover="hover"
               onClick={scrollToTop}
             >
               See the Latest Works
             </motion.button>
             <motion.button
-              variants={textVariants}
               className="cont"
+              variants={buttonHover}
+              whileHover="hover"
               onClick={scrollToTop2}
             >
               Contact Me
             </motion.button>
           </motion.div>
           <motion.img
-            variants={textVariants}
-            animate="scrollButton"
             src={scroll}
-            alt=""
-          ></motion.img>
+            alt="Scroll down"
+            variants={scrollVariants}
+            animate="animate"
+          />
         </motion.div>
         <motion.div
+          className="slidingTextContainer"
           variants={sliderVariants}
           initial="initial"
           animate="animate"
-          className="slidingTextContainer"
         >
           Full Stack Developer
         </motion.div>
-        <div className="imageContainer">
+        <motion.div
+          className="imageContainer"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <img src={hero} alt="hero" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

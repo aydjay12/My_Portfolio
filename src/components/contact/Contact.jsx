@@ -42,7 +42,7 @@ const svgVariants = {
   initial: { opacity: 1 },
   animate: {
     opacity: 0,
-    transition: { delay: 3.5, duration: 1 }
+    transition: { delay: 3, duration: 1 }
   }
 };
 
@@ -50,7 +50,7 @@ const formVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delay: 4, duration: 1 }
+    transition: { delay: 3, duration: 1 }
   }
 };
 
