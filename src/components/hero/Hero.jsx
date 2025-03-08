@@ -59,17 +59,18 @@ const sliderVariants = {
 };
 
 const Hero = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 3500,
-      behavior: "smooth",
-    });
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("Projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
-  const scrollToTop2 = () => {
-    window.scrollTo({
-      top: 9100,
-      behavior: "smooth",
-    });
+
+  const scrollToContacts = () => {
+    const contactsSection = document.getElementById("Contact");
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -89,7 +90,7 @@ const Hero = () => {
               className="latest"
               variants={buttonHover}
               whileHover="hover"
-              onClick={scrollToTop}
+              onClick={scrollToProjects}
             >
               See the Latest Works
             </motion.button>
@@ -97,7 +98,7 @@ const Hero = () => {
               className="cont"
               variants={buttonHover}
               whileHover="hover"
-              onClick={scrollToTop2}
+              onClick={scrollToContacts}
             >
               Contact Me
             </motion.button>
