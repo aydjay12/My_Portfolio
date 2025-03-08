@@ -1,0 +1,191 @@
+@import "../../app.scss";
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #0c0c1d;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include mobile {
+    padding: 40px 15px;
+    flex-direction: column;
+  }
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-right: 40px;
+    margin-top: -4em;
+
+    @include mobile {
+      padding-right: 0;
+      gap: 30px;
+      margin-bottom: 40px;
+      align-items: center;
+      text-align: center;
+      margin-top: unset;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 500;
+      color: white;
+      line-height: 1.2;
+
+      @include mobile {
+        font-size: 36px;
+      }
+    }
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 400;
+          color: rebeccapurple;
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 300;
+          color: lightgray;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 350px;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .phoneSvg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 200px;
+        height: 200px;
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      z-index: 2;
+
+      input,
+      textarea {
+        padding: 15px;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        border-radius: 5px;
+        background-color: rgba(26, 26, 46, 0.8);
+        color: white;
+        font-size: 16px;
+        font-family: "Kumbh Sans", sans-serif;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: orange;
+        }
+
+        &::placeholder {
+          color: gray;
+        }
+
+        @include mobile {
+          padding: 12px;
+          font-size: 14px;
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      button {
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: orange;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rebeccapurple;
+        }
+
+        @include mobile {
+          padding: 12px;
+          font-size: 14px;
+        }
+      }
+
+      .status {
+        text-align: center;
+        min-height: 20px;
+
+        .error {
+          color: #ff4444;
+          font-size: 14px;
+        }
+
+        .success {
+          color: #44ff44;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
