@@ -55,8 +55,9 @@ const App = () => {
         <About></About>
       </section>
       <section id="Services">
-        <Services></Services>
+        <Parallax type="contact"></Parallax>
       </section>
+      <Services></Services>
       <section id="Projects">
         <Parallax type="portfolio"></Parallax>
       </section>
