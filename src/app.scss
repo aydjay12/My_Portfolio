@@ -1,5 +1,5 @@
 html {
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -28,8 +28,12 @@ a {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: center;
+}
+
+#About, #Projects, #Contact {
+  height: 100vh;
 }
 
 .back-to-top-button {
@@ -38,15 +42,21 @@ section {
   right: 20px;
   background-color: orange;
   border: none;
-  border-radius: 0.4em;
-  width: 40px;
-  height: 40px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
   z-index: 10000;
+  padding: .5em;
+  padding-top: 0.3em;
+  img{
+    width: 100%;
+    filter: brightness(0) invert(1); 
+  }
 }
 
 .back-to-top-button:hover {

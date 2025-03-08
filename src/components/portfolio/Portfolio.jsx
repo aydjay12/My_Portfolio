@@ -12,26 +12,34 @@ import pizzeria from "/src/images/pizzeria.png";
 import fruit from "/src/images/fruit.png";
 import scroll from "/src/images/scroll.png";
 
-const textVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
     },
   },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      duration: 2,
-      repeat: Infinity,
+      duration: 0.6,
+      ease: "easeOut",
     },
+  },
+};
+
+const hoverVariants = {
+  hover: {
+    scale: 1.02,
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
 
@@ -41,63 +49,63 @@ const items = [
     title: "E-Commerce App",
     img: ecommerce,
     href: "https://aydjay12.github.io/E-Commerce_App/",
-    desc: "Engineered a modular React.js e-commerce frontend, facilitating an engaging shopping experience with real-time updates and responsive design. Leveraged component-based architecture for flexibility and efficient management.",
+    desc: "A modular React-based e-commerce frontend with real-time updates and responsive design, showcasing component-driven development.",
   },
   {
     id: 2,
-    title: "Real Estate Website",
+    title: "RentUp Website",
     img: rentup,
-    href: "https://aydjay12.github.io/Real_Estate_Website/",
-    desc: "Designed a sleek React.js frontend for a real estate website, featuring dynamic property listings and interactive search functionalities for an optimized user experience.",
+    href: "https://rentupgold.onrender.com",
+    desc: "A full-stack application built with React, Node.js, and MongoDB, featuring authentication, coupon system, Stripe payments, admin dashboard, and user profiles.",
   },
   {
     id: 3,
     title: "FitClub Gym Website",
     img: fitclub,
     href: "https://aydjay12.github.io/FitClub/",
-    desc: "Welcome to the FitClub Gym Website Demo, a showcase of my frontend development skills using React, Sass, and Vite. From sleek design elements to seamless navigation, this demo highlights my expertise in creating dynamic and responsive web applications.",
+    desc: "A sleek React-based gym website demo with responsive design and smooth navigation, built using Sass and Vite.",
   },
   {
     id: 4,
     title: "Blog Website",
     img: blog,
     href: "https://aydjay12.github.io/Blog_Website/",
-    desc: "Crafted a user-friendly React.js blog frontend with an intuitive layout and dynamic post rendering for an engaging reading experience.",
+    desc: "A user-friendly React blog frontend with dynamic post rendering and an intuitive layout for an engaging reading experience.",
   },
   {
     id: 5,
     title: "Agency Website",
     img: agency,
     href: "https://aydjay12.github.io/Agency_Website/",
-    desc: "Developed a sleek and responsive React.js frontend for an agency website. Incorporated modern design elements, seamless navigation, and dynamic content presentation to enhance user engagement.",
+    desc: "A responsive React agency website with modern design elements and dynamic content presentation for enhanced user engagement.",
   },
   {
     id: 6,
     title: "ARUA 2023",
     img: arua,
     href: "https://aydjay12.github.io/ARUA-2023/",
-    desc: "Designed and developed a dynamic event website for the University of Lagos, showcasing a modern and engaging interface. Implemented features such as event details, schedule, and registration forms, ensuring seamless navigation and a user-friendly experience.",
+    desc: "A dynamic event website for the University of Lagos with event details, schedules, and registration forms in a modern interface.",
   },
   {
     id: 7,
     title: "Netflix Dub Website",
     img: streamit,
     href: "https://aydjay12.github.io/netflix-dub/",
-    desc: "Developed a Netflix clone website using React.js, offering a visually immersive and responsive streaming experience. Implemented key features such as user authentication, dynamic movie fetching, and an interactive video player to replicate the essence of the original platform.",
+    desc: "A Netflix clone built with React, featuring user authentication, dynamic movie fetching, and an interactive video player.",
   },
   {
     id: 8,
     title: "Deji's Pizzeria",
     img: pizzeria,
     href: "https://aydjay12.github.io/Deji_Pizzeria/",
-    desc: "Crafted a mouthwatering Pizzeria website sample using React.js, featuring an appetizing design and seamless navigation. Leveraged React components for a responsive frontend, delivering a visually appealing and delicious representation of the pizzeria's offerings.",
+    desc: "A visually appealing React pizzeria website with responsive design and component-based architecture.",
   },
   {
     id: 9,
     title: "Fruit Website",
     img: fruit,
     href: "https://aydjay12.github.io/Fruit-Website/",
-    desc: "Embarked on my initial project, an amateurish fruit website, as a foundational exploration into web development. Despite evident flaws, this project served as a crucial learning experience in coding, design, and user interaction.",
+    desc: "An early project exploring web development basics with HTML, CSS, and JavaScript, focusing on design and user interaction.",
   },
 ];
 
@@ -106,31 +114,36 @@ const Single = ({ item }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 4], ["0%", "-300%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
-    <section>
+    <motion.section
+      ref={ref}
+      variants={itemVariants}
+      whileHover="hover"
+    >
       <div className="container">
-        <div className="wrapper" ref={ref}>
-          <img src={item.img} alt="" />
-          <motion.div className="textContainer" style={{ y }}>
+        <motion.div className="wrapper" variants={hoverVariants}>
+          <img src={item.img} alt={item.title} />
+          <motion.div className="textContainer">
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <a href={item.href} target="blank">
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
               <button>See Demo</button>
             </a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
+
 const Portfolio = () => {
   const ref = useRef();
-  const [visibleItems, setVisibleItems] = useState(2);
+  const [visibleItems, setVisibleItems] = useState(3);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -143,31 +156,46 @@ const Portfolio = () => {
   });
 
   const handleLoadMore = () => {
-    setVisibleItems((prev) => prev + 2);
+    setVisibleItems((prev) => Math.min(prev + 3, items.length));
   };
 
   return (
-    <div className="portfolio" ref={ref}>
-      <div className="progress">
+    <motion.div
+      className="portfolio"
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <motion.div className="progress" variants={itemVariants}>
         <h1>Featured Works</h1>
-        <motion.div style={{ scaleX }} className="progressBar"></motion.div>
-      </div>
+        <motion.div style={{ scaleX }} className="progressBar" />
+      </motion.div>
+
       {items.slice(0, visibleItems).map((item) => (
-        <Single item={item} key={item.id}></Single>
+        <Single item={item} key={item.id} />
       ))}
+
       {visibleItems < items.length && (
-        <button className="loadMore" onClick={handleLoadMore}>
-          See More
+        <motion.button
+          className="loadMore"
+          onClick={handleLoadMore}
+          variants={itemVariants}
+          whileHover={{ scale: 1.05 }}
+        >
+          Load More
           <motion.img
-            className="scrollMore"
-            variants={textVariants}
-            animate="scrollButton"
             src={scroll}
-            alt=""
-          ></motion.img>
-        </button>
+            alt="Scroll down"
+            className="scrollMore"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.button>
       )}
-    </div>
+    </motion.div>
   );
 };
+
 export default Portfolio;

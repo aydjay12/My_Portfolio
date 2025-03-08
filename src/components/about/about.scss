@@ -1,112 +1,119 @@
 @import "../../app.scss";
 
 .about {
-  height: 100%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
-  z-index: 11;
-  overflow: hidden;
+  gap: 30px;
+  color: lightgray;
+  min-height: 100vh;
 
   @include mobile {
-    width: 90%;
-    flex-direction: column;
+    padding: 40px 15px;
+    gap: 40px;
   }
-}
-.about-me h1 {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  color: rebeccapurple;
 
-  @include mobile {
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    font-size: 2em;
+  h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: rebeccapurple;
+    margin-bottom: 20px;
+
+    @include mobile {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
   }
-}
-.about-me p {
-  margin-bottom: 2em;
-  line-height: 1.4em;
 
-  @include mobile {
-    font-size: 0.85em;
-    margin-bottom: 2em;
-    font-size: 0.9em;
+  .about-me {
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
   }
-}
-.experience h1 {
-  margin-bottom: 1em;
-  color: rebeccapurple;
 
-  @include mobile {
-    font-size: 1.7em;
-    margin-bottom: 0.6em;
-  }
-}
-.junior {
-  display: flex;
-  flex-direction: column;
-}
-.row-1 {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 0.6em;
-}
-.row-1 h2 {
-  font-weight: 400;
-  font-size: 1.2em;
+  .experience,
+  .education {
+    .entry {
+      margin-bottom: 30px;
 
-  @include mobile {
-    font-size: 1em;
-  }
-}
-.row-1 p {
-  font-size: 0.7em;
-  font-weight: 600;
-  background: white;
-  color: rgba(15, 22, 36, 100%);
-  display: flex;
-  align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 2em;
+      &:last-child {
+        margin-bottom: 0;
+      }
 
-  @include mobile {
-    font-size: 0.6em;
-    width: 22%;
-    height: 100%;
-    padding: 0.6em;
-  }
-}
-.row-2 h6 {
-  font-weight: 500;
-  font-family: "Rajdhani", sans-serif;
-  letter-spacing: 0.1em;
-  margin-bottom: 2em;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
 
-  @include mobile {
-    font-size: 0.6em;
-  }
-}
-.row-2 ul {
-  background: white;
-  width: 100%;
-  padding: 0.005em;
-  border-radius: 2em;
-  margin-bottom: 2em;
+        h2 {
+          font-size: 22px;
+          font-weight: 400;
+          color: white;
 
-  @include mobile {
-    margin-bottom: 1em;
-  }
-}
-.education h1 {
-  margin-bottom: 1em;
-  color: rebeccapurple;
+          @include mobile {
+            font-size: 18px;
+          }
+        }
 
-  @include mobile {
-    font-size: 1.7em;
-    margin-bottom: 0.6em;
+        .tag {
+          font-size: 12px;
+          font-weight: 600;
+          background: rebeccapurple;
+          color: white;
+          padding: 6px 12px;
+          border-radius: 15px;
+
+          @include mobile {
+            font-size: 10px;
+            padding: 4px 10px;
+          }
+        }
+      }
+
+      .details {
+        h3 {
+          font-size: 16px;
+          font-weight: 400;
+          color: gray;
+          margin-bottom: 10px;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding-left: 20px;
+
+          li {
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            margin-bottom: 8px;
+
+            &:before {
+              content: "▹";
+              color: rebeccapurple;
+              position: absolute;
+              left: -20px;
+              top: 2px;
+            }
+
+            @include mobile {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
   }
 }

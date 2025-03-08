@@ -23,6 +23,7 @@
 
     span {
       font-weight: bold;
+      margin-left: 1.4em;
 
       @include mobile {
         display: none;

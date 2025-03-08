@@ -1,192 +1,99 @@
-/* eslint-disable react/no-unescaped-entities */
-import { useRef } from "react";
 import "./services.scss";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import people from "/src/images/people.webp";
 
-const variants = {
-  initial: {
-    x: -500,
-    y: 100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.2,
     },
   },
 };
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const hoverVariants = {
+  hover: {
+    scale: 1.02,
+    backgroundColor: "#e0e0e0",
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
 const Services = () => {
-  const ref = useRef();
-
-  const isInView = useInView(ref, { margin: "-100px" });
-
   return (
     <motion.div
       className="services"
-      //   whileInView="animate"
-      ref={ref}
-      animate={"animate"}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
     >
-      <motion.div
-        className="textContainer"
-        initial={{ x: -300 }}
-        whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <motion.div className="textContainer" variants={itemVariants}>
         <p>
-          I focus on incorporating beautiful designs
-          <br></br> in a seamless manner
+          Building seamless, scalable solutions
+          <br /> for modern web challenges
         </p>
-        <hr></hr>
+        <hr />
       </motion.div>
-      <motion.div
-        className="titleContainer"
-        initial={{ x: 300 }}
-        whileInView={{ x: 0 }}
-        transition={{ duration: 1 }}
-      >
+
+      <motion.div className="titleContainer" variants={itemVariants}>
         <div className="title">
-          <img src={people} alt="" />
+          <img src={people} alt="Team collaboration" />
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Designs
+            <motion.b whileHover={{ color: "orange" }}>Full Stack</motion.b>{" "}
+            Expertise
           </h1>
         </div>
         <div className="title">
           <h1>
             <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>{" "}
-            Business.
+            Success
           </h1>
-          <button>WHAT I USE?</button>
+          <button>Explore My Skills</button>
         </div>
       </motion.div>
-      <motion.div
-        className="listContainer mobile"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 3 }}
-      >
-        <div className="one">
-          <motion.div
-            className="box"
-            whileHover={{ background: "lightgray", color: "black" }}
-          >
-            <h2>HTML</h2>
-            <p>
-              Having dedicated two years to mastering HTML, I've evolved into an
-              advanced user with a deep understanding of its intricacies.
-              Proficient in crafting semantic and accessible markup, I excel in
-              structuring web content for optimal user experience and search
-              engine visibility. From complex forms to responsive layouts, my
-              expertise in HTML empowers me to create efficient,
-              standards-compliant, and visually compelling web applications.
-            </p>
-            <button>Advanced</button>
-          </motion.div>
-          <motion.div
-            className="box"
-            whileHover={{ background: "lightgray", color: "black" }}
-          >
-            <h2>CSS</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-              minus tenetur impedit cupiditate. Laboriosam quam tempore facere
-              porro dolores sed vel saepe? Incidunt, ea? Nam, enim! Ut maiores
-              debitis aliquid!
-            </p>
-            <button>Advanced</button>
-          </motion.div>
-        </div>
-        <div className="two">
-          <motion.div
-            className="box"
-            whileHover={{ background: "lightgray", color: "black" }}
-          >
-            <h2>JAVASCRIPT</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-              minus tenetur impedit cupiditate. Laboriosam quam tempore facere
-              porro dolores sed vel saepe? Incidunt, ea? Nam, enim! Ut maiores
-              debitis aliquid!
-            </p>
-            <button>Advanced</button>
-          </motion.div>
-          <motion.div
-            className="box"
-            whileHover={{ background: "lightgray", color: "black" }}
-          >
-            <h2>REACT</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-              minus tenetur impedit cupiditate. Laboriosam quam tempore facere
-              porro dolores sed vel saepe? Incidunt, ea? Nam, enim! Ut maiores
-              debitis aliquid!
-            </p>
-            <button>Advanced</button>
-          </motion.div>
-        </div>
-      </motion.div>
-      <motion.div
-        className="listContainer"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 3 }}
-      >
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>HTML</h2>
+
+      <motion.div className="listContainer" variants={itemVariants}>
+        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+          <h2>Frontend</h2>
           <p>
-            Having dedicated over two years to mastering HTML, I've evolved into
-            an advanced user with a deep understanding of its intricacies.
-            Proficient in crafting semantic and accessible markup, I excel in
-            structuring web content for optimal user experience.
+            Crafting responsive, user-friendly interfaces with React, HTML, CSS, and JavaScript. I focus on pixel-perfect designs and smooth interactions.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>CSS</h2>
+        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+          <h2>Backend</h2>
           <p>
-            I'm adept at creating visually stunning and responsive web designs.
-            From intricate layouts to meticulous styling, my expertise
-            encompasses the use of flexbox, grid, and animations. As a result, I
-            can transform design concepts into polished user interfaces.
+            Building robust server-side solutions with Node.js and Express. I ensure efficient logic and secure application performance.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>JAVASCRIPT</h2>
+        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+          <h2>Database Management</h2>
           <p>
-            After extensive and dedicated learning, I've achieved proficiency in
-            JavaScript, mastering its core concepts and advanced
-            functionalities. My skill set includes DOM manipulation,
-            asynchronous programming, and proficiency in popular frameworks like
-            React.js.
+            Designing and managing databases with MongoDB and SQL. I optimize data storage and retrieval for scalability.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>REACT</h2>
+        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+          <h2>API Development</h2>
           <p>
-            With two years of hands-on experience, I've evolved into an advanced
-            React.js developer. Proficient in building dynamic and scalable web
-            applications, my skills encompass component-driven architecture,
-            state management, and effective use of React libraries.
+            Creating RESTful APIs for seamless communication between systems. I prioritize security and efficiency in data exchange.
           </p>
           <button>Advanced</button>
         </motion.div>

@@ -1,78 +1,105 @@
 import "./about.scss";
 import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const About = () => {
   return (
-    <div className="about">
-      <motion.div
-        className="about-me"
-        initial={{ opacity: 0, y: 200 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1>About me</h1>
+    <motion.div
+      className="about"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <motion.div className="about-me" variants={itemVariants}>
+        <h1>About Me</h1>
         <p>
-          Highly skilled and passionate Front End Developer with over 2 years of
-          experience in creating and implementing innovative user interfaces and
-          interactive web applications. Proficient in translating design
-          mock-ups and wireframes into responsive and pixel-perfect web
-          experiences. Adept at collaborating with cross-functional teams to
-          deliver top-notch products that exceed client expectations. Committed
-          to staying updated with the latest web development trends and best
-          practices to continuously improve development efficiency and user
-          experience. Excels in HTML, CSS, JavaScript, and various modern
-          front-end frameworks, including React and Angular.
+          I’m a dedicated Full Stack Developer with over 3 years of experience crafting robust, scalable web applications. Specializing in both front-end and back-end development, I thrive on turning complex ideas into intuitive, high-performing solutions. With expertise in JavaScript, React, Node.js, Express, and MongoDB, I deliver seamless user experiences backed by efficient server-side logic. Collaborative and detail-oriented, I’m passionate about leveraging modern technologies to solve real-world problems.
         </p>
       </motion.div>
-      <motion.div
-        className="experience"
-        initial={{ opacity: 0, y: -300 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, staggerChildren: 0.1 }}
-      >
-        <h1>Work Experience</h1>
-        <div className="junior">
-          <div className="row-1">
-            <h2>Junior Web Developer</h2>
-            <p>Remote</p>
+
+      <motion.div className="experience" variants={itemVariants}>
+        <h1>Experience</h1>
+        <div className="entry">
+          <div className="header">
+            <h2>Full Stack Developer</h2>
+            <span className="tag">Freelance</span>
           </div>
-          <div className="row-2">
-            <h6>Freelance</h6>
-            <ul></ul>
+          <div className="details">
+            <h3>Remote • 2022 - Present</h3>
+            <ul>
+              <li>Built end-to-end web applications using React, Node.js, and MongoDB</li>
+              <li>Designed and implemented RESTful APIs for seamless data flow</li>
+              <li>Optimized performance and ensured cross-device compatibility</li>
+            </ul>
           </div>
         </div>
-        <div className="web">
-          <div className="row-1">
+        <div className="entry">
+          <div className="header">
+            <h2>Frontend Developer</h2>
+            <span className="tag">Contract</span>
+          </div>
+          <div className="details">
+            <h3>Sphiderassweb Limited • June 2024 - January 2025</h3>
+            <ul>
+              <li>Developed responsive and interactive UIs using React and TypeScript</li>
+              <li>Collaborated with designers to implement pixel-perfect designs</li>
+              <li>Integrated APIs and optimized front-end performance</li>
+            </ul>
+          </div>
+        </div>
+        <div className="entry">
+          <div className="header">
             <h2>Web Development Intern</h2>
-            <p>Internship</p>
+            <span className="tag">Internship</span>
           </div>
-          <div className="row-2">
-            <h6>
-              Centre For Information Technology and Systems(C.I.T.S), UNILAG
-            </h6>
-            <ul></ul>
+          <div className="details">
+            <h3>C.I.T.S, University of Lagos • 2021</h3>
+            <ul>
+              <li>Developed internal tools using JavaScript and PHP</li>
+              <li>Managed database updates and front-end improvements</li>
+              <li>Assisted in testing and debugging web applications</li>
+            </ul>
           </div>
         </div>
       </motion.div>
-      <motion.div
-        className="education"
-        initial={{ opacity: 0, y: -300 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, staggerChildren: 0.1 }}
-      >
+
+      <motion.div className="education" variants={itemVariants}>
         <h1>Education</h1>
-        <div className="bachelor">
-          <div className="row-1">
-            <h2>Bachelor in Science and Technology Education</h2>
-            <p>Full Time</p>
+        <div className="entry">
+          <div className="header">
+            <h2>B.Sc. in Science and Technology Education</h2>
+            <span className="tag">Full-Time</span>
           </div>
-          <div className="row-2">
-            <h6>University of Lagos</h6>
-            <ul></ul>
+          <div className="details">
+            <h3>University of Lagos • Graduated 2022</h3>
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

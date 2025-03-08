@@ -43,13 +43,13 @@ const Hero = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 3500,
-      behavior: "smooth", // Smooth scrolling animation
+      behavior: "smooth",
     });
   };
   const scrollToTop2 = () => {
     window.scrollTo({
       top: 9100,
-      behavior: "smooth", // Smooth scrolling animation
+      behavior: "smooth",
     });
   };
 
@@ -64,7 +64,7 @@ const Hero = () => {
         >
           <motion.img src={hero} className="mob-img" />
           <motion.h2 variants={textVariants}>AYODEJI OLALEKAN</motion.h2>
-          <motion.h1 variants={textVariants}>Front-end Web Developer</motion.h1>
+          <motion.h1 variants={textVariants}>Full Stack Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <motion.button
               className="latest"
@@ -94,10 +94,10 @@ const Hero = () => {
           animate="animate"
           className="slidingTextContainer"
         >
-          Front-end Web Developer
+          Full Stack Developer
         </motion.div>
         <div className="imageContainer">
-          <img src={hero}></img>
+          <img src={hero} alt="hero" />
         </div>
       </div>
     </div>
