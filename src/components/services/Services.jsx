@@ -69,28 +69,28 @@ const Services = () => {
       </motion.div>
 
       <motion.div className="listContainer" variants={itemVariants}>
-        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+        <motion.div className="box desktop-hover" whileHover="hover" variants={hoverVariants}>
           <h2>Frontend</h2>
           <p>
             Crafting responsive, user-friendly interfaces with React, HTML, CSS, and JavaScript. I focus on pixel-perfect designs and smooth interactions.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+        <motion.div className="box desktop-hover" whileHover="hover" variants={hoverVariants}>
           <h2>Backend</h2>
           <p>
             Building robust server-side solutions with Node.js and Express. I ensure efficient logic and secure application performance.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+        <motion.div className="box desktop-hover" whileHover="hover" variants={hoverVariants}>
           <h2>Database Management</h2>
           <p>
             Designing and managing databases with MongoDB and SQL. I optimize data storage and retrieval for scalability.
           </p>
           <button>Advanced</button>
         </motion.div>
-        <motion.div className="box" whileHover="hover" variants={hoverVariants}>
+        <motion.div className="box desktop-hover" whileHover="hover" variants={hoverVariants}>
           <h2>API Development</h2>
           <p>
             Creating RESTful APIs for seamless communication between systems. I prioritize security and efficiency in data exchange.

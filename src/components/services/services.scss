@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   padding: 60px 20px;
-  min-height: 100vh;
 
   @include mobile {
     padding: 40px 15px;
@@ -178,11 +177,18 @@
           padding: 8px 15px;
         }
       }
+    }
 
-      &:hover {
+    .desktop-hover:hover {
+      h2,
+      p {
+        color: #0c0c1d; // Dark color for contrast on light hover background
+      }
+
+      @include mobile {
         h2,
         p {
-          color: #0c0c1d; // Dark color for contrast on light hover background
+          color: inherit; // Reset to default colors on mobile
         }
       }
     }
