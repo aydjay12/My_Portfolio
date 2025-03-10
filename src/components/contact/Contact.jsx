@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const containerVariants = {
@@ -42,7 +42,7 @@ const svgVariants = {
   initial: { opacity: 1 },
   animate: {
     opacity: 0,
-    transition: { delay: 3, duration: 1 }
+    transition: { delay: 2.5, duration: 1 }
   }
 };
 
@@ -57,6 +57,8 @@ const formVariants = {
 const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
+  const svgRef = useRef();
+  const isInView = useInView(svgRef, { once: true, margin: "-100px" });
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -65,7 +67,7 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_cqi9mna",
+        "service_tlpt3lq",
         "template_nn1ajim",
         formRef.current,
         "--gZTzItUaERWwh7S"
@@ -112,9 +114,10 @@ const Contact = () => {
 
       <div className="formContainer">
         <motion.div
+          ref={svgRef}
           className="phoneSvg"
           initial="initial"
-          animate="animate"
+          animate={isInView ? "animate" : "initial"}
           variants={svgVariants}
         >
           <svg width="250" height="250" viewBox="0 0 32.666 32.666">
@@ -137,7 +140,7 @@ const Contact = () => {
                 C32.666,7.326,25.339,0,16.333,0z"
               variants={pathVariants}
               initial="hidden"
-              animate="visible"
+              animate={isInView ? "visible" : "hidden"}
             />
           </svg>
         </motion.div>
