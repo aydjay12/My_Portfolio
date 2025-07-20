@@ -55,7 +55,7 @@ const items = [
     id: 2,
     title: "RentUp Website",
     img: rentup,
-    href: "https://rentupgold.onrender.com",
+    href: "https://rent-up-gold.vercel.app/",
     desc: "A full-stack application built with React, Node.js, and MongoDB, featuring authentication, coupon system, Stripe payments, admin dashboard, and user profiles.",
   },
   {
