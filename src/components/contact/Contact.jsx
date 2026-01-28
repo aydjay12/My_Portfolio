@@ -29,11 +29,11 @@ const itemVariants = {
 
 const pathVariants = {
   hidden: { pathLength: 0 },
-  visible: { 
+  visible: {
     pathLength: 1,
-    transition: { 
-      duration: 2.5, 
-      ease: "easeInOut" 
+    transition: {
+      duration: 2.5,
+      ease: "easeInOut"
     }
   }
 };
@@ -67,7 +67,7 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_tlpt3lq",
+        "service_7gco76f",
         "template_nn1ajim",
         formRef.current,
         "--gZTzItUaERWwh7S"
