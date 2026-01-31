@@ -94,22 +94,18 @@
 
       button {
         padding: 15px 30px;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 5px;
         background-color: orange;
         color: white;
         font-size: 18px;
         font-weight: 600;
-        cursor: unset;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: rebeccapurple;
-        }
+        transition: all 0.3s ease;
 
         @include mobile {
           padding: 12px 25px;
           font-size: 16px;
+          cursor: default;
         }
       }
     }
@@ -160,35 +156,27 @@
 
       button {
         padding: 10px;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 5px;
         background-color: rebeccapurple;
         color: white;
         font-weight: 500;
-        cursor: unset;
         align-self: flex-start;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: orange;
-        }
+        transition: all 0.3s ease;
 
         @include mobile {
           padding: 8px 15px;
+          cursor: default;
         }
       }
     }
 
-    .desktop-hover:hover {
-      h2,
-      p {
-        color: #0c0c1d; // Dark color for contrast on light hover background
-      }
+    @media (hover: hover) {
+      .desktop-hover:hover {
 
-      @include mobile {
         h2,
         p {
-          color: inherit; // Reset to default colors on mobile
+          color: #0c0c1d; // Dark color for contrast on light hover background
         }
       }
     }

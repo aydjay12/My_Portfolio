@@ -52,7 +52,18 @@
     top: 25px;
     left: 25px;
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    @include mobile {
+      cursor: default;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: black;
+      }
+    }
   }
 }

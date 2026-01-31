@@ -1,3 +1,21 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
 html {
   // scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -32,7 +50,10 @@ section {
   scroll-snap-align: center;
 }
 
-#About, #Projects, #Services, #Contact1 {
+#About,
+#Projects,
+#Services,
+#Contact1 {
   height: 100vh;
 }
 
@@ -53,14 +74,22 @@ section {
   z-index: 10000;
   padding: .5em;
   padding-top: 0.3em;
-  img{
+
+  @include mobile {
+    cursor: default;
+  }
+
+  img {
     width: 100%;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
   }
 }
 
-.back-to-top-button:hover {
-  background-color: rebeccapurple;
+@media (hover: hover) {
+  .back-to-top-button:hover {
+    background-color: transparent;
+    border: 1px solid orange;
+  }
 }
 
 .course {
@@ -79,26 +108,12 @@ section {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: orange;
-}
-
-@mixin mobile {
-  @media (max-width: 738px) {
-    @content;
-  }
-}
-@mixin tablet {
-  @media (max-width: 1024px) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (max-width: 1366px) {
-    @content;
-  }
 }

@@ -110,9 +110,9 @@
 
       button {
         padding: 15px 30px;
-        border: 1px solid white;
+        border: 1px solid rebeccapurple;
         border-radius: 5px;
-        background-color: transparent;
+        background-color: rebeccapurple;
         color: white;
         cursor: pointer;
         font-weight: 600;
@@ -123,20 +123,26 @@
           width: 100%;
           padding: 15px;
           font-size: 16px;
+          cursor: default;
         }
 
-        &:hover {
-          background: rebeccapurple;
-          border-color: rebeccapurple;
+        @media (hover: hover) {
+          &:hover {
+            background: transparent;
+            border-color: rebeccapurple;
+          }
         }
 
         &.cont {
           background: white;
           color: black;
+          border: 1px solid white;
 
-          &:hover {
-            background: rebeccapurple;
-            color: white;
+          @media (hover: hover) {
+            &:hover {
+              background: transparent;
+              color: white;
+            }
           }
         }
       }
