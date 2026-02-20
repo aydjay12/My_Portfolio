@@ -42,7 +42,8 @@ const svgVariants = {
   initial: { opacity: 1 },
   animate: {
     opacity: 0,
-    transition: { delay: 2.5, duration: 1 }
+    transition: { delay: 2.5, duration: 1 },
+    transitionEnd: { display: "none" }
   }
 };
 
@@ -57,8 +58,7 @@ const formVariants = {
 const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
-  const svgRef = useRef();
-  const isInView = useInView(svgRef, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -114,7 +114,6 @@ const Contact = () => {
 
       <div className="formContainer">
         <motion.div
-          ref={svgRef}
           className="phoneSvg"
           initial="initial"
           animate={isInView ? "animate" : "initial"}
@@ -150,8 +149,7 @@ const Contact = () => {
           onSubmit={sendEmail}
           variants={formVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate={isInView ? "visible" : "hidden"}
         >
           <input type="text" required placeholder="Name" name="name" />
           <input type="email" required placeholder="Email" name="email" />
